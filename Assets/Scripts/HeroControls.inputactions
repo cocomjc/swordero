@@ -1,0 +1,33 @@
+{
+    "name": "HeroControls",
+    "maps": [
+        {
+            "name": "Hero",
+            "id": "62ff5649-c1b4-4eca-a22f-849301b2e0aa",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "37847769-abe0-431a-b53e-0cf072bf4896",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "98543e44-e882-43b1-8f34-2b0c4eed133a",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
