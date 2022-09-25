@@ -4,31 +4,20 @@ using UnityEngine;
 
 public class HeroFightController : MonoBehaviour
 {
-    private bool isStill = false;
-    private List<GameObject> enemies;
-    private bool isAttacking = false;
-
-    private void Start() {
-        enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-    }
+ //   private bool isStill = false;
+    //private bool isAttacking = false;
 
     private void Update() {
-        if (isStill && enemies.Count > 0 && !isAttacking) {
+/*        if (isStill && enemies.Count > 0 && !isAttacking) {
             isAttacking = true;
             this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
-            Destroy(enemies[0]);
-            enemies.RemoveAt(0);
-            Debug.Log("Enemy killed, " + enemies.Count + " enemies left");
-        }
-    }
+            GameObject target = GetClosestEnemy();
+            transform.LookAt(target.transform);
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + 180, 0);
 
-    public void SetStill(bool isRunning)
-    {
-        isStill = !isRunning;
-    }
-
-    public void SetAttacking(bool newVal)
-    {
-        isAttacking = newVal;
-    }
+            /*            Destroy(enemies[0]);
+                        enemies.RemoveAt(0);*/
+//            Debug.Log("Enemy killed, " + enemies.Count + " enemies left");
+//        }
+    }    
 }

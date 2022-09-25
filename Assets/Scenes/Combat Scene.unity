@@ -250,6 +250,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
 --- !u!1001 &337934964
@@ -311,7 +319,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2020503553, guid: 89de4008f8cc87d4a8e2924ba9d12eb7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 89de4008f8cc87d4a8e2924ba9d12eb7, type: 3}
 --- !u!4 &337934965 stripped
 Transform:
@@ -578,6 +587,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
 --- !u!4 &687333392 stripped
@@ -594,6 +611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 700102693}
+  - component: {fileID: 700102694}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -620,6 +638,18 @@ Transform:
   m_Father: {fileID: 536021692}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &700102694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700102692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887110d3f018caf40aff87ee8300ef30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &759810382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 297763066410921876, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
@@ -679,6 +709,14 @@ PrefabInstance:
     - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
       propertyPath: m_Name
       value: Bee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
@@ -879,6 +917,14 @@ PrefabInstance:
     - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
       propertyPath: m_Name
       value: Bee (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
@@ -1312,6 +1358,14 @@ PrefabInstance:
     - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
       propertyPath: m_Name
       value: Bee (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
