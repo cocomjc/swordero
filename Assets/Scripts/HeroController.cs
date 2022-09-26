@@ -6,8 +6,9 @@ public class HeroController : Singleton<HeroController>
 {
     private HeroControls heroInput;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         heroInput = new HeroControls();
 /*        HeroFightController fightController = GetComponent<HeroFightController>();
         heroInput.Hero.Move.started += ctx => fightController.SetStill(false);

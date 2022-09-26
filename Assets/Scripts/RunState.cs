@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RunState : StateMachineBehaviour
 {
-    const string IDLE_STATE = "Idle";
+    public const string IDLE_STATE = "Idle";
     public float playerSpeed = 2.0f;
 
     HeroController heroController;
@@ -12,13 +12,12 @@ public class RunState : StateMachineBehaviour
 
     private void Awake()
     {
-        heroController = HeroController.Instance;
+        heroController = HeroController.GetInstance();
     }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         parentObject = animator.transform.parent.gameObject;
-        Debug.Log("game object name: " + parentObject.name);
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

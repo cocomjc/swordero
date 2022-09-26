@@ -6,7 +6,7 @@ public class EnemyManager : Singleton<EnemyManager>
 {
     private List<GameObject> enemies = new List<GameObject>();
 
-    private void Start()
+    public void SetUpEnemyList()
     {
         foreach (Transform child in transform)
         {
@@ -14,7 +14,7 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
-    public GameObject GetClosestEnemy(Vector2 playerPos)
+    public GameObject GetClosestEnemy(Vector3 playerPos)
     {
         float minDistance = Mathf.Infinity;
         GameObject closestEnemy = null;
@@ -28,5 +28,10 @@ public class EnemyManager : Singleton<EnemyManager>
             }
         }
         return closestEnemy;
+    }
+
+    public bool EnemyExists()
+    {
+        return enemies.Count > 0;
     }
 }

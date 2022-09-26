@@ -8,19 +8,26 @@ public class IdleState : StateMachineBehaviour
     const string ATTACK_STATE = "Attack";
 
     HeroController heroController;
+    EnemyManager enemyManager;
 
     private void Awake()
     {
-        heroController = HeroController.Instance;
+        heroController = HeroController.GetInstance();
+        enemyManager = EnemyManager.GetInstance();
+        enemyManager.SetUpEnemyList();
     }
 
-    
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (heroController.GetDirection() != Vector2.zero)
         {
             Debug.Log("Moving");
             animator.SetTrigger(MOVE_STATE);
+        }
+        else if (enemyManager.EnemyExists())
+        {
+            Debug.Log("Attack");
+            animator.SetTrigger(ATTACK_STATE);
         }
     }
 }
