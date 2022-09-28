@@ -35,12 +35,13 @@ public class AttackState : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameObject target = enemyManager.GetClosestEnemy(animator.transform.position);
+        Vector3 target = enemyManager.GetClosestEnemy(animator.transform.position).transform.position;
         if(target != null)
         {
             if (canFire)
             {
-                weaponController.Fire(parentObject.transform.position, target.transform.position);
+                target.y = weaponController.transform.position.y;
+                weaponController.Fire(target);
                 canFire = false;
             }
             else {
