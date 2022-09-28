@@ -40,7 +40,7 @@ public class AttackState : StateMachineBehaviour
         {
             if (canFire)
             {
-                target.y = weaponController.transform.position.y;
+                target.y = GameObject.FindGameObjectsWithTag("FirePoint")[0].transform.position.y;
                 weaponController.Fire(target);
                 canFire = false;
             }
