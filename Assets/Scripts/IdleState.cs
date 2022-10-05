@@ -21,12 +21,12 @@ public class IdleState : StateMachineBehaviour
     {
         if (heroController.GetDirection() != Vector2.zero)
         {
-            Debug.Log("Moving");
+            //Debug.Log("Moving");
             animator.SetTrigger(MOVE_STATE);
         }
         else if (enemyManager.EnemyExists())
         {
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             animator.SetTrigger(ATTACK_STATE);
         }
     }

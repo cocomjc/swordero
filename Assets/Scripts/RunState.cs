@@ -23,7 +23,7 @@ public class RunState : StateMachineBehaviour
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (heroController.GetDirection() == Vector2.zero) {
-            Debug.Log("Idle");
+            //Debug.Log("Idle");
             animator.SetTrigger(IDLE_STATE); }
     }
 
