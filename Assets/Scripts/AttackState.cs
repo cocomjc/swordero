@@ -50,6 +50,7 @@ public class AttackState : StateMachineBehaviour
         }
         if (heroController.GetDirection() != Vector2.zero)
         {
+            weaponController.CancelFire();
             animator.SetTrigger(IdleState.MOVE_STATE);
         }
     }

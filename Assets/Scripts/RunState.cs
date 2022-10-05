@@ -5,14 +5,15 @@ using UnityEngine;
 public class RunState : StateMachineBehaviour
 {
     public const string IDLE_STATE = "Idle";
-    public float playerSpeed = 2.0f;
-
+    
     HeroController heroController;
+    HeroParameters heroParameters;
     GameObject parentObject;
 
     private void Awake()
     {
         heroController = HeroController.GetInstance();
+        heroParameters = HeroParameters.GetInstance();
     }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,7 +32,7 @@ public class RunState : StateMachineBehaviour
     {
         Vector2 movementInput = -heroController.GetDirection();
         Vector3 move = new Vector3(movementInput.x, 0f, movementInput.y);
-        parentObject.GetComponent<CharacterController>().Move(move * Time.deltaTime * playerSpeed);
+        parentObject.GetComponent<CharacterController>().Move(move * Time.deltaTime * heroParameters.GetMoveSpeed());
 
         if (move != Vector3.zero)
         {
