@@ -5,7 +5,7 @@ public class ProjectileComponent : MonoBehaviour
 {
     bool m_isActive = false;
 
-    Vector3 m_direction = Vector3.zero;
+    Vector3 m_direction = new Vector3(1,0,0);
     float m_speed = 0;
 
 
@@ -22,10 +22,9 @@ public class ProjectileComponent : MonoBehaviour
         }
     }
 
-    internal void FireProjectile(Vector3 _direction, float _speed)
+    internal void FireProjectile(float _speed)
     {
         m_isActive = true;
-        m_direction = _direction;
         m_speed = _speed;
         StartCoroutine(DisableObjectDelayed(5));
     }

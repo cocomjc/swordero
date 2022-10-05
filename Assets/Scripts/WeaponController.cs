@@ -31,7 +31,9 @@ public class WeaponController : MonoBehaviour
         ProjectileComponent projectile = GetComponent<ObjectPool>().GetPooledObject().GetComponent<ProjectileComponent>();
         projectile.gameObject.SetActive(true);
         projectile.transform.position = firePoint.transform.position;
-        Vector3 direction = (_target - firePoint.transform.position).normalized;
-        projectile.FireProjectile(direction, _speed);
+        projectile.transform.LookAt(_target);
+        projectile.transform.Rotate(0, -90, 0);
+        //        Vector3 direction = (_target - firePoint.transform.position).normalized;
+        projectile.FireProjectile(_speed);
     }
 }

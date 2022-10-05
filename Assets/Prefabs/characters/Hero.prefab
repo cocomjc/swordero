@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1360014565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360014566}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: FirePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1360014566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360014565}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -0.773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3206923099687242365}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &108621035693453250
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,9 +130,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1993995369825730728}
+  - component: {fileID: 1075456334}
+  - component: {fileID: 1075456335}
   m_Layer: 6
   m_Name: WeaponSlot
-  m_TagString: Untagged
+  m_TagString: WeaponSlot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +153,41 @@ Transform:
   m_Father: {fileID: 7142007670873817628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1075456334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989233646364555110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee18775b698fcb44ab99893c13c21e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefabs:
+  - {fileID: 6937623146161485751, guid: 4d0814cafad460246890ec829fa7071d, type: 3}
+  - {fileID: 478356759475107179, guid: 17cf6e9fc28f3a544bc062d510f66f4a, type: 3}
+  - {fileID: 15448191510330147, guid: bac79aa2a0057e5429a664d3f336da3d, type: 3}
+  damages: 10
+  damageAfterTime: 1
+  _speed: 10
+  firePoint: {fileID: 0}
+--- !u!114 &1075456335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989233646364555110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbeade0effc18941b1b0c2cee1d8716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 6937623146161485751, guid: 4d0814cafad460246890ec829fa7071d, type: 3}
+  amountToPool: 7
 --- !u!1 &2278871870280470665
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +562,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2148928661061455951}
+  - {fileID: 1360014566}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,7 +580,7 @@ CharacterController:
   m_Height: 2.5
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.25, z: 0}
