@@ -165,14 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee18775b698fcb44ab99893c13c21e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefabs:
-  - {fileID: 6937623146161485751, guid: 4d0814cafad460246890ec829fa7071d, type: 3}
-  - {fileID: 478356759475107179, guid: 17cf6e9fc28f3a544bc062d510f66f4a, type: 3}
-  - {fileID: 15448191510330147, guid: bac79aa2a0057e5429a664d3f336da3d, type: 3}
-  damages: 10
-  damageAfterTime: 1
-  _speed: 10
-  firePoint: {fileID: 0}
+  baseSpeed: 15
+  damage: 10
 --- !u!114 &1075456335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +537,7 @@ GameObject:
   - component: {fileID: 3206923099687242365}
   - component: {fileID: 2020503551}
   - component: {fileID: 2020503552}
+  - component: {fileID: 7800753642819785448}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -577,8 +572,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.5
-  m_Radius: 0.5
+  m_Height: 2
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08
@@ -596,6 +591,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee8a372507ee344ea76e65337d096c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7800753642819785448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206923099687242354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e6edef15ef94e4abc99e31458da44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1.5
+  moveSpeed: 7
 --- !u!1 &3512741108777884559
 GameObject:
   m_ObjectHideFlags: 0

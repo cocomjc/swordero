@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : Singleton<EnemyManager>
+
 {
     private List<GameObject> enemies = new List<GameObject>();
 

@@ -19,6 +19,7 @@ public class EnemyComponent : MonoBehaviour
 
     private void OnDestroy()
     {
+        Debug.Log("Enemy Destroyed");
         enemyManager.RemoveEnemy(gameObject);
     }
 
