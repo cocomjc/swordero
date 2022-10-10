@@ -755,14 +755,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee
       objectReference: {fileID: 0}
-    - target: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 6926839794863368119, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
 --- !u!1 &1244021808

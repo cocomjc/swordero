@@ -7,6 +7,7 @@ public class ProjectileComponent : MonoBehaviour
 
     Vector3 m_direction = new Vector3(1,0,0);
     float m_speed = 0;
+    float m_damage = 0;
 
 
     private void Start()
@@ -22,10 +23,11 @@ public class ProjectileComponent : MonoBehaviour
         }
     }
 
-    internal void FireProjectile(float _speed)
+    internal void FireProjectile(float _speed, float _damage)
     {
         m_isActive = true;
         m_speed = _speed;
+        m_damage = _damage;
         StartCoroutine(DisableObjectDelayed(5));
     }
 
@@ -34,6 +36,13 @@ public class ProjectileComponent : MonoBehaviour
         //Delay 0.1 to allow the physics collision to happen
         StopAllCoroutines(); // Stop the 5 second trigger started earlier
         StartCoroutine(DisableObjectDelayed(0.1f));
+        if (collision.gameObject.GetComponent<EnemyComponent>())
+        {
+            collision.gameObject.GetComponent<EnemyComponent>().TakeDamage(m_damage);
+        }
+        else {
+            Debug.Log("Projectile hit something else");
+        }
     }
 
 

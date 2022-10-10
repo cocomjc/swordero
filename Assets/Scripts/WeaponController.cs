@@ -7,6 +7,7 @@ public class WeaponController : MonoBehaviour
     private HeroParameters heroParameters;
     [SerializeField] private float baseSpeed = 15f;
     private GameObject firePoint;
+    public float damage = 10f;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class WeaponController : MonoBehaviour
         projectile.transform.position = firePoint.transform.position;
         projectile.transform.LookAt(_target);
         projectile.transform.Rotate(0, -90, 0);
-        projectile.FireProjectile(baseSpeed * heroParameters.GetAttackSpeed());
+        projectile.FireProjectile(baseSpeed * heroParameters.GetAttackSpeed(), damage);
     }
 
     public void CancelFire()

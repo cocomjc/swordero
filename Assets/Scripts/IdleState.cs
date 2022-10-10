@@ -14,7 +14,6 @@ public class IdleState : StateMachineBehaviour
     {
         heroController = HeroController.GetInstance();
         enemyManager = EnemyManager.GetInstance();
-        enemyManager.SetUpEnemyList();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
