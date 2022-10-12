@@ -393,6 +393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee
       objectReference: {fileID: 0}
+    - target: {fileID: 1944715729296273576, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
 --- !u!1001 &602822057
@@ -1203,6 +1207,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794693653}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1890319419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1358921057130329688, guid: 41e04faa14fb7a34e8b16750ec910fc3, type: 3}
+  m_PrefabInstance: {fileID: 303782545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1890319420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890319419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c060c19bd513b4448ce581f498287a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!1 &2141811028
 GameObject:
   m_ObjectHideFlags: 0
