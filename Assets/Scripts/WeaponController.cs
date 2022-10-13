@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    private HeroParameters heroParameters;
+    private HeroComponent heroParameters;
     [SerializeField] private float baseSpeed = 15f;
     private GameObject firePoint;
     public float damage = 10f;
@@ -12,7 +12,7 @@ public class WeaponController : MonoBehaviour
     private void Awake()
     {
         firePoint = GameObject.FindGameObjectsWithTag("FirePoint")[0];
-        heroParameters = HeroParameters.GetInstance();
+        heroParameters = HeroComponent.GetInstance();
     }
 
     public void Fire(Vector3 _target)

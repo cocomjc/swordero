@@ -7,13 +7,13 @@ public class RunState : StateMachineBehaviour
     public const string IDLE_STATE = "Idle";
     
     HeroController heroController;
-    HeroParameters heroParameters;
+    HeroComponent heroParameters;
     GameObject parentObject;
 
     private void Awake()
     {
         heroController = HeroController.GetInstance();
-        heroParameters = HeroParameters.GetInstance();
+        heroParameters = HeroComponent.GetInstance();
     }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

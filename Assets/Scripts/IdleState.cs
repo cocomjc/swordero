@@ -26,7 +26,7 @@ public class IdleState : StateMachineBehaviour
         else if (enemyManager.EnemyExists())
         {
             //Debug.Log("Attack");
-            //animator.SetTrigger(ATTACK_STATE);
+            animator.SetTrigger(ATTACK_STATE);
         }
     }
 }

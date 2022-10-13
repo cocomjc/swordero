@@ -8,8 +8,8 @@ public class EnemyRunState : StateMachineBehaviour
     public const string IDLE_STATE = "Idle";
 
     private GameObject player;
-    public float speed = 5f;
-    GameObject parentObject;
+    private GameObject parentObject;
+    private EnemyComponent enemyComponent;
 
     private void Awake()
     {
@@ -19,12 +19,13 @@ public class EnemyRunState : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         parentObject = animator.transform.parent.gameObject;
+        enemyComponent = parentObject.GetComponent<EnemyComponent>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-//        Debug.Log("Distance weetween player and " + animator.transform.name + " is " + Vector3.Distance(animator.transform.position, player.transform.position));
-        if (Vector3.Distance(animator.transform.position, player.transform.position) < EnemyIdleState.range)
+        //        Debug.Log("Distance weetween player and " + animator.transform.name + " is " + Vector3.Distance(animator.transform.position, player.transform.position));
+        if (Vector3.Distance(animator.transform.position, player.transform.position) < enemyComponent.GetRange())
         {
             //Debug.Log("Idle");
             animator.SetTrigger(IDLE_STATE);
@@ -41,7 +42,7 @@ public class EnemyRunState : StateMachineBehaviour
     {
         if (player)
         {
-            parentObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            parentObject.transform.Translate(Vector3.forward * enemyComponent.GetSpeed() * Time.deltaTime);
         }
     }
 }

@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HeroParameters : Singleton<HeroParameters>
+public class HeroComponent : Singleton<HeroComponent>
 {
     [SerializeField] private float attackSpeed = 1.0f;
     [SerializeField] private float moveSpeed = 2.0f;
-    //public float damages;
-    //public float damageAfterTime;
+    [SerializeField] private float maxHealth = 40f;
+    private float health;
+    public Slider healthBar;
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = GameManager.GetInstance();
         Animator animator = transform.GetChild(0).GetComponent<Animator>();
         animator.SetFloat("AttackSpeed", attackSpeed);
+        health = maxHealth;
     }
 
     public float GetAttackSpeed()
@@ -34,4 +39,16 @@ public class HeroParameters : Singleton<HeroParameters>
     {
         moveSpeed = _moveSpeed;
     }
+    public void TakeDamage(float _damage)
+    {
+        health -= _damage;
+        if (health <= 0)
+        {
+            //LOSE
+            Debug.Log("LOSE");
+            gameManager.EndGame();
+        }
+        healthBar.value = health / maxHealth;
+    }
+
 }

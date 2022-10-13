@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyAttackState : StateMachineBehaviour
 {
     bool canAttack = false;
-    GameObject parentObject;
+    private GameObject parentObject;
     private GameObject player;
+    private EnemyComponent enemyComponent;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class EnemyAttackState : StateMachineBehaviour
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         parentObject = animator.transform.parent.gameObject;
+        enemyComponent = parentObject.GetComponent<EnemyComponent>();
         canAttack = true;
     }
 
@@ -26,9 +28,11 @@ public class EnemyAttackState : StateMachineBehaviour
             if (canAttack)
             {
                 canAttack = false;
+                Debug.Log("Attack");
+                enemyComponent.Attack(enemyComponent.GetRange());
             }
         }
-        if (Vector3.Distance(animator.transform.position, player.transform.position) > EnemyIdleState.range)
+        if (Vector3.Distance(animator.transform.position, player.transform.position) > enemyComponent.GetRange())
         {
             //Cancel attack
             animator.SetTrigger(EnemyIdleState.MOVE_STATE);

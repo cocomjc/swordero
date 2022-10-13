@@ -37,11 +37,14 @@ public class AttackState : StateMachineBehaviour
     {
         GameObject enemy = enemyManager.GetClosestEnemy(parentObject.transform.position);
         
-        if(enemy != null)
+        if (!enemy) {
+            animator.SetTrigger(EnemyRunState.IDLE_STATE);
+        }
+        if (enemy != null)
         {
-            Vector3 target = enemy.transform.position;
             if (canFire)
             {
+                Vector3 target = enemy.transform.position;
                 target.y = GameObject.FindGameObjectsWithTag("FirePoint")[0].transform.position.y;
                 weaponController.Fire(target);
                 canFire = false;
