@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : StateMachineBehaviour
+public class EnemyIdleState : StateMachineBehaviour
 {
     public const string MOVE_STATE = "Run";
     const string ATTACK_STATE = "Attack";
-
-    HeroController heroController;
-    EnemyManager enemyManager;
+    private GameObject player;
+    public const float range = 1.5f;
 
     private void Awake()
     {
-        heroController = HeroController.GetInstance();
-        enemyManager = EnemyManager.GetInstance();
+        player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (heroController.GetDirection() != Vector2.zero)
+        // if hero is not in range move toward him
+        if (Vector3.Distance(animator.transform.position, player.transform.position) > range)
         {
-            //Debug.Log("Moving");
             animator.SetTrigger(MOVE_STATE);
         }
-        else if (enemyManager.EnemyExists())
+        else
         {
             //Debug.Log("Attack");
-            //animator.SetTrigger(ATTACK_STATE);
+            animator.SetTrigger(ATTACK_STATE);
         }
     }
 }
